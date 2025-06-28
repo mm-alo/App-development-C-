@@ -6,20 +6,38 @@ namespace MyFirstProgram
 {
     class Program
     {
-        public static void Main(string[] args)
+        public static int Main(string[] args)
         {
-            Console.WriteLine("Enter your name: ");
-            string name = Console.ReadLine();
+            while (true)
+            {
+            Console.Write("How many sets of numbers you want to divide? ");
+            int sets = Convert.ToInt32(Console.ReadLine());
+            
+                
+                 for (int i = 1; i <= sets; i++)
+                {
+                    Console.WriteLine("First Number: ");
+                    decimal fnum = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Total number of Courses: ");
-            int course1 = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Second Number: ");
+                    decimal Snum = Convert.ToDecimal(Console.ReadLine());
 
-            Console.WriteLine("Enter price of your favorite book: ");
-            int book1 = Convert.ToInt32(Console.ReadLine());
+                    if (Snum == 0)
+                    {
+                        Console.WriteLine("You cannot divide by Zero ");
+                        Console.WriteLine(" ");
+                        break;
+                    }
 
-            Console.WriteLine("Name " + name);
-            Console.WriteLine("Total number of enrolled courses " + course1);
-            Console.WriteLine("Price of your favorite book " + book1);
+                    decimal results = fnum / Snum;
+                    Console.WriteLine("results: " + results.ToString("F2"));
+                    Console.WriteLine();
+
+
+                }
+            } 
+            
         }
+        
      }
 }
